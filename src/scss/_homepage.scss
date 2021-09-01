@@ -1,3 +1,5 @@
+@use "sass:math";
+
 .homepage {
     // Top Bar
     .topbar {
@@ -90,6 +92,9 @@
                             text-transform: uppercase;
                             color: #fff;
                             margin-bottom: 0;
+                            user-select: none;
+                            transition: opacity 0.1s ease-out;
+                            transition-delay: 0.2s;
                         }
                     }
                 }
@@ -97,17 +102,87 @@
                 .front-layer {
                     position: absolute;
                     top: 0;
-                    left: ($grid-gutter-width / 2);
+                    left: math.div($grid-gutter-width, 2);
                     width: calc(100% - #{$grid-gutter-width});
-                    height: 100%;
-                    background: rgba($primary-color, 0.3);
+                    height: 0;
+                    background: rgba(darken($primary-color, 20), 0.6);
                     backdrop-filter: blur(1.5px);
                     text-align: center;
                     color: #fff;
+                    transition: height 0.2s ease-in-out;
+                    transition-delay: 0.2s;
 
-                    .title {
-                        font-family: $primary-font;
-                        font-weight: 700;
+                    .text-container {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        width: 100%;
+                        opacity: 0;
+                        visibility: hidden;
+                        transition: all 0.3s ease-in;
+
+                        .title {
+                            font-weight: 700;
+                            text-transform: uppercase;
+                        }
+    
+                        .description {
+                            width: 80%;
+                            margin: 0 auto;
+                            font-weight: 300;
+                            font-size: 0.9em;
+                        }
+
+                        .link {
+                            color: #fff;
+                            font-weight: 600;
+                            text-decoration: none;
+                            position: relative;
+                            display: inline-block;
+                            margin-top: 20px;
+                            transition: all 0.3s ease-in-out;
+
+                            &::before {
+                                content: '';
+                                width: 100%;
+                                height: 2px;
+                                position: absolute;
+                                left: 50%;
+                                bottom: 0;
+                                transform: translateX(-50%);
+                                background-color: #fff;
+                                transition: all 0.3s ease-in-out;
+                            }
+
+                            &:hover {
+                                &::before {
+                                    width: calc(100% + 10px);
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &:hover {
+                    .back-layer {
+                        .text-layer {
+                            .title {
+                                opacity: 0;
+                                transition-delay: 0;
+                            }
+                        }
+                    }
+
+                    .front-layer {
+                        height: 100%;
+                        transition-delay: 0s;
+
+                        .text-container {
+                            opacity: 1;
+                            visibility: visible;
+                            transition-delay: 0.2s;
+                        }
                     }
                 }
             }
