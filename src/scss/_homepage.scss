@@ -36,8 +36,8 @@
         }
     }
 
-    // Background
-    .bkg-section {
+    // Dark Background
+    .dark-bkg-section {
         background: url('../images/bkg-img.png');
         background-repeat: repeat;
     }
@@ -50,13 +50,7 @@
             margin-bottom: 50px;
 
             .heading {
-                font-family: $primary-font;
-                font-weight: 700;
-                color: $primary-color;
-                text-transform: uppercase;
-                text-align: center;
-                font-size: 2.3rem;
-                margin-bottom: 0;
+                @include heading()
             }
         }
 
@@ -182,6 +176,140 @@
                             opacity: 1;
                             visibility: visible;
                             transition-delay: 0.2s;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // About Us Section
+    .about-us-section {
+        padding: 30px 0;
+
+        .left-content {
+            .heading {
+                @include heading(left);
+            }
+
+            .text-area {
+                font-weight: 300;
+                font-size: 0.9em;
+                color: #fff;
+            }
+
+            .learn-more-btn {
+                margin-top: 20px;
+                @include button('primary');
+                
+                &:hover {
+                    background-color: #fff;
+                    color: $primary-color;
+                }
+            }
+        }
+
+        .right-content {
+            position: relative;
+
+            .main-img {
+                width: 80%;
+                float: right;
+                margin-top: 25px;
+            }
+
+            .artist-img-container {
+                width: 30%;
+                position: absolute;
+                bottom: 0;
+                left: 30px;
+                border: 7px solid #fff;
+
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    // Instagram Section
+    .instagram-section {
+        padding-top: 40px;
+
+        .section-title {
+            margin-bottom: 25px;
+
+            .heading {
+                @include heading();
+            }
+        }
+
+        .section-main {
+            .images {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+                grid-column-gap: 6px;
+    
+                .img-container {
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    // Light Background
+    .light-bkg-section {
+        background-color: #f8ecee;
+    }
+
+    .testimonial-section {
+        padding: 50px 0;
+
+        .title-section {
+            margin-bottom: 40px;
+
+            .heading {
+                @include heading;
+            }
+        }
+
+        .section-main {
+            .testimonial-slider {
+                .slide {
+                    padding: 0 15px;
+
+                    .slide-inner {
+                        background-color: #fff;
+                        padding: 35px 30px;
+                        border-radius: 10px;
+                        border: 1px solid #e4e4e4;
+
+                        .quote-icon {
+                            width: 65px;
+                            margin-bottom: 20px;
+                        }
+
+                        .body {
+                            margin-bottom: 20px;
+                            font-weight: 300;
+                            color: #3b4044;
+                        }
+
+                        .footer {
+                            .name {
+                                color: $primary-color;
+                                margin-bottom: 0;
+                                font-weight: 600;
+                            }
+
+                            .designation {
+                                color: #878e94;
+                                margin-bottom: 0;
+                                font-weight: 400;
+                                font-size: 0.9em;
+                            }
                         }
                     }
                 }
