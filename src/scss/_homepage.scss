@@ -264,6 +264,7 @@
         background-color: #f8ecee;
     }
 
+    // Testitmonial Section
     .testimonial-section {
         padding: 50px 0;
 
@@ -276,6 +277,47 @@
         }
 
         .section-main {
+            .tns-outer {
+                .tns-controls {
+                    margin-top: 30px;
+                    display: flex;
+                    justify-content: center;
+
+                    button {
+                        display: inline-block;
+                        color: #a8a8a8;
+                        border-radius: 50%;
+                        border: 1px solid #a8a8a8;
+                        background: #fff;
+                        height: 55px;
+                        width: 55px;
+                        margin: 0;
+                        padding: 0;
+                        position: relative;
+                        transition: all 0.2s ease-in-out;
+
+                        i {
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                            font-size: 1.3em;
+                        }
+
+                        &:hover,
+                        &:focus {
+                            background: #000;
+                            color: #fff;
+                            border: #000;
+                        }
+
+                        &:first-child {
+                            margin-right: 15px;
+                        }
+                    }
+                }
+            }
+
             .testimonial-slider {
                 .slide {
                     padding: 0 15px;
@@ -311,6 +353,28 @@
                                 font-size: 0.9em;
                             }
                         }
+                    }
+                }
+            }
+        }
+    }
+
+    .contact-us-section {
+        padding: 50px 0;
+
+        .section-title {
+            .heading {
+                @include heading();
+            }
+        }
+
+        .section-main {
+            .left-side {
+                .contact-info {
+                    ul {
+                        list-style-type: none;
+                        padding: 0;
+                        margin: 0;
                     }
                 }
             }
