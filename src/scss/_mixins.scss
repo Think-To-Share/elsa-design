@@ -6,12 +6,15 @@
     }
 
     color: $color;
+    border: 0;
     text-decoration: none;
     text-transform: uppercase;
     font-weight: 600;
     display: inline-block;
     text-align: center;
     padding: 12px 30px;
+    margin: 0;
+    box-shadow: none;
     border-radius: 10em;
     transition: background-color 0.2s ease-in-out, color 0.15s ease-in-out;
 }

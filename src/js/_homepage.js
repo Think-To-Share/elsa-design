@@ -1,8 +1,8 @@
 import { tns } from "tiny-slider/src/tiny-slider"
 
-if(document.querySelector('.homepage .testimonial-section')) {
+if(document.querySelector('.testimonial-section')) {
     tns({
-        container: '.homepage .testimonial-section .testimonial-slider',
+        container: '.testimonial-section .testimonial-slider',
         items: 3,
         autoplay: true,
         autoplayButtonOutput: false,
