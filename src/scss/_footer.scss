@@ -1,17 +1,37 @@
 // footer section
 .footer-section{
     background-color: $secondary-color;
-    padding: 60px 0;
+    padding: 60px 0 80px 0;
+
     .footer-wid-header{
         color: #fff;
-        text-transform: capitalize;
-        font-size: 16px;
+        text-transform: uppercase;
+        font-size: 1em;
         font-weight: 500;
-        margin-bottom: 10px;
+        margin-bottom: 20px;
     }
-    .nav{
+
+    .menu{
         text-decoration: none;
+        margin: 0;
+        padding: 0;
         color: #818181;
+
+        li {
+            list-style-type: none;
+            display: block;
+            margin-bottom: 5px;
+            font-size: 0.9em;
+            
+            a {
+                color: inherit;
+                text-decoration: none;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
     }
 }
 
