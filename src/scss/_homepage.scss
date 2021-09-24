@@ -1,5 +1,94 @@
 @use "sass:math";
 
+// heading top
+.heading-section{
+    .header-top{
+        padding-top:30px ;    
+        padding-bottom:30px ;   
+         .heading-mail-call{
+            display: flex;
+            .emailus{
+                color:#b0b0b0;
+                margin-bottom: 0;
+                a{
+                    color: #020300;
+                    text-decoration: none;
+                    &:hover{
+                        text-decoration: underline;
+                    }
+                }
+            }
+            .callus{
+                color:#b0b0b0;
+                padding-left:3%;
+                margin-bottom: 0;
+                a{
+                    color: #020300;
+                    text-decoration: none;
+    
+                    &:hover{
+                        text-decoration: underline;
+                    }
+                }
+            } 
+        }
+        .logo-container{
+            .logo{
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                width: 140px;
+            }
+          
+        }
+    }
+    .header-bottom{
+        border-top: 1px solid #e1e1e1;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #e1e1e1;
+        .menu-container {
+            ul {
+                list-style-type: none;
+                padding: 0;
+                margin: 0;
+                display: flex;
+                justify-content: center;
+        
+                li {
+                    padding: 0 15px;
+                    a{
+                        text-decoration: none;
+                        font-size: 0.9em;
+                        color:#222222;
+                        font-weight:500;
+                        position: relative;
+
+                        &::after {
+                            content: "";
+                            position: absolute;
+                            left: 0;
+                            top: calc(100% + 5px);
+                            width: 0;
+                            height: 2px;
+                            background-color: $primary-color;
+                            transition: width 0.3s ease-in-out;
+                        }
+                        &:hover {
+                            &::after {
+                                width: 100%;
+                            }
+                        }
+                    }
+                    }
+                    // text-transform: uppercase;
+                 
+            }
+        }
+    }
+  
+}
+
 // Top Bar
 .topbar {
     background-color: $secondary-color;
